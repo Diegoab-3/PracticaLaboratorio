@@ -277,7 +277,12 @@ FR-017 se conserva para no perder el identificador histórico, pero su estado es
 ## 5. Requisitos no funcionales
 
 | ID | Categoría y atributo | Requisito no funcional | Ámbito (Global/Local) | UR/FR relacionados | Método de comprobación | Estado |
-| --- | --- | --- | --- | --- | --- | --- |
+| NFR-01 | NFR-Q(usabilidad y accesibilidad |La interfaz de la plataforma adaptará dinámicamente su esquema de colores  según la configuración del sistema operativo o navegador del usuario | G|UR-ACCESIBILIDAD | Inspección visual en el navegador cambiando las preferencias del sistema operativo y verificación del marcado HTML |Cambio manual de las preferencias de color del S.O. y revisión de los atributos del marcado HTML | Implementado |
+|NFR-02|NFR-Q(Seguridad;Integridad)|El sistema incluirá tokens de seguridad dinámicos y nonces (fetch-nonce y html-safe-nonce) en todas las peticiones que modifiquen el estado para prevenir ataques de falsificación de petición en sitios cruzados|G|UR-SEGURIDAD|Intercepción de solicitudes HTTP para validar la presencia de la clave única nonce e intentar peticiones no autorizadas|Implementado|
+|NFR-03|NFR-Q (Fiabilidad; Disponibilidad)|El sistema debe garantizar una disponibilidad global del 99.9% (tiempo de actividad / uptime)|G|UR-DISPONIBILIDAD|Pruebas de estrés y monitorización continua del servidor|Pendeinte|
+|NFR-04|NFR-Q (Portabilidad; Infraestructura)|Todo el sistema debe ser desplegado sobre infraestructura en la nube (AWS o GCP)|G|UR-INFRAESTRUCTURA|Inspección de arquitectura y auditoría de la consola cloud|Pendiente|
+|NFR-05|NFR-Q (Eficiencia; Rendimiento)|El sistema implementará técnicas de preconexión de dominios (dns-prefetch y preconnect hacia CDN/servidores externos) para optimizar los tiempos de resolución DNS y carga de recursos estáticos.|G|UR-RENDIMIENTO, FR-OPTIMIZACION|Prueba y Análisis: Inspección de las peticiones de red en la pestaña Network de DevTools para medir la latencia y comprobar la reducción de tiempos en DNS Lookup.|Implementado|
+
 | NFR-07 |NFR-Q (Eficiencia; Escalabilidad; Mantenibilidad) |La plataforma mantendrá los objetivos de capacidad y rendimiento definidos para la primera versión sin intervención manual del personal de la organización.| G | -  | Prueba de carga automatizada con 100 usuarios concurrentes y 10 operaciones/s durante 30 min; comprobar mediante registros de monitorización, ausencia de intervención manual. | - |
 
 Categorías y atributos: 
